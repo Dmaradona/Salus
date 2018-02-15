@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D93CB44-1514-465F-BC45-536F8D21E952}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HydraSystem2</RootNamespace>
+    <AssemblyName>HydraSystem2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\..\..\NPGSQL\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\..\..\..\NPGSQL\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agenda\Agendafrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda\Agendafrm.Designer.cs">
+      <DependentUpon>Agendafrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agenda\Agendarfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda\Agendarfrm.Designer.cs">
+      <DependentUpon>Agendarfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agenda\BuscaInteligentefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda\BuscaInteligentefrm.Designer.cs">
+      <DependentUpon>BuscaInteligentefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agenda\Novovalorfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda\Novovalorfrm.Designer.cs">
+      <DependentUpon>Novovalorfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultorio\MainConsultoriofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultorio\MainConsultoriofrm.Designer.cs">
+      <DependentUpon>MainConsultoriofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Convenio\BuscaConvenioAgendafrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Convenio\BuscaConvenioAgendafrm.Designer.cs">
+      <DependentUpon>BuscaConvenioAgendafrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Convenio\MainConveniofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Convenio\MainConveniofrm.Designer.cs">
+      <DependentUpon>MainConveniofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\DAOConnAgenda.cs" />
+    <Compile Include="DAO\DAOConnConvenio.cs" />
+    <Compile Include="DAO\DAOConnDentista.cs" />
+    <Compile Include="DAO\DAOConnPaciente.cs" />
+    <Compile Include="DAO\DAOConnProcedimento.cs" />
+    <Compile Include="DAO\DAOConnUsuario.cs" />
+    <Compile Include="Dentista\BuscaDentistafrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentista\BuscaDentistafrm.Designer.cs">
+      <DependentUpon>BuscaDentistafrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dentista\CadastroDentistafrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentista\CadastroDentistafrm.Designer.cs">
+      <DependentUpon>CadastroDentistafrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dentista\MainDentistafrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentista\MainDentistafrm.Designer.cs">
+      <DependentUpon>MainDentistafrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despesas\MainDespesasfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despesas\MainDespesasfrm.Designer.cs">
+      <DependentUpon>MainDespesasfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Caixa\Caixafrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Caixa\Caixafrm.Designer.cs">
+      <DependentUpon>Caixafrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Faturas Pagar\ConsultaFaturaPagarfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Faturas Pagar\ConsultaFaturaPagarfrm.Designer.cs">
+      <DependentUpon>ConsultaFaturaPagarfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Faturas Pagar\FaturaPagarfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Faturas Pagar\FaturaPagarfrm.Designer.cs">
+      <DependentUpon>FaturaPagarfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Faturas Receber\ConsultaFaturaReceberfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Faturas Receber\ConsultaFaturaReceberfrm.Designer.cs">
+      <DependentUpon>ConsultaFaturaReceberfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Faturas Receber\FaturaReceberfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Faturas Receber\FaturaReceberfrm.Designer.cs">
+      <DependentUpon>FaturaReceberfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\MainFinanceirofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\MainFinanceirofrm.Designer.cs">
+      <DependentUpon>MainFinanceirofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormaPagamento\MainFormaPagamentofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaPagamento\MainFormaPagamentofrm.Designer.cs">
+      <DependentUpon>MainFormaPagamentofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor\CadastroFornecedorfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedor\CadastroFornecedorfrm.Designer.cs">
+      <DependentUpon>CadastroFornecedorfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor\MainFornecedorfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedor\MainFornecedorfrm.Designer.cs">
+      <DependentUpon>MainFornecedorfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionario\CadastroFuncionariofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionario\CadastroFuncionariofrm.Designer.cs">
+      <DependentUpon>CadastroFuncionariofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionario\MainFuncionariofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionario\MainFuncionariofrm.Designer.cs">
+      <DependentUpon>MainFuncionariofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\BuscaUsuariofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\BuscaUsuariofrm.Designer.cs">
+      <DependentUpon>BuscaUsuariofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loginfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loginfrm.Designer.cs">
+      <DependentUpon>Loginfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\CadastroUsuariofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\CadastroUsuariofrm.Designer.cs">
+      <DependentUpon>CadastroUsuariofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\MainUsuariofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\MainUsuariofrm.Designer.cs">
+      <DependentUpon>MainUsuariofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materiais\MainMateriaisfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materiais\MainMateriaisfrm.Designer.cs">
+      <DependentUpon>MainMateriaisfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objetos\Anamnese.cs" />
+    <Compile Include="Objetos\Consulta.cs" />
+    <Compile Include="Objetos\Contato.cs" />
+    <Compile Include="Objetos\Convenio.cs" />
+    <Compile Include="Objetos\Endereco.cs" />
+    <Compile Include="Objetos\Paciente.cs" />
+    <Compile Include="Objetos\Parcela.cs" />
+    <Compile Include="Objetos\Responsavel.cs" />
+    <Compile Include="Paciente\CadastroPacientefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paciente\CadastroPacientefrm.Designer.cs">
+      <DependentUpon>CadastroPacientefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\MainPacientesfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paciente\MainPacientesfrm.Designer.cs">
+      <DependentUpon>MainPacientesfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\BuscaPacienteAgendafrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paciente\BuscaPacienteAgendafrm.Designer.cs">
+      <DependentUpon>BuscaPacienteAgendafrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parceiro\MainParceirofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parceiro\MainParceirofrm.Designer.cs">
+      <DependentUpon>MainParceirofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procedimento\BuscaProcedimentofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procedimento\BuscaProcedimentofrm.Designer.cs">
+      <DependentUpon>BuscaProcedimentofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procedimento\CadastroProcedimentofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procedimento\CadastroProcedimentofrm.Designer.cs">
+      <DependentUpon>CadastroProcedimentofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorio\MainRelatoriofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\MainRelatoriofrm.Designer.cs">
+      <DependentUpon>MainRelatoriofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\RelatorioAtendimentofrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\RelatorioAtendimentofrm.Designer.cs">
+      <DependentUpon>RelatorioAtendimentofrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\RelatorioRecursosfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\RelatorioRecursosfrm.Designer.cs">
+      <DependentUpon>RelatorioRecursosfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabelas\MainTabelasfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabelas\MainTabelasfrm.Designer.cs">
+      <DependentUpon>MainTabelasfrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Agenda\Agendafrm.resx">
+      <DependentUpon>Agendafrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agenda\Agendarfrm.resx">
+      <DependentUpon>Agendarfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agenda\BuscaInteligentefrm.resx">
+      <DependentUpon>BuscaInteligentefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agenda\Novovalorfrm.resx">
+      <DependentUpon>Novovalorfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultorio\MainConsultoriofrm.resx">
+      <DependentUpon>MainConsultoriofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Convenio\BuscaConvenioAgendafrm.resx">
+      <DependentUpon>BuscaConvenioAgendafrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Convenio\MainConveniofrm.resx">
+      <DependentUpon>MainConveniofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentista\BuscaDentistafrm.resx">
+      <DependentUpon>BuscaDentistafrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentista\CadastroDentistafrm.resx">
+      <DependentUpon>CadastroDentistafrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentista\MainDentistafrm.resx">
+      <DependentUpon>MainDentistafrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despesas\MainDespesasfrm.resx">
+      <DependentUpon>MainDespesasfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Caixa\Caixafrm.resx">
+      <DependentUpon>Caixafrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Faturas Pagar\ConsultaFaturaPagarfrm.resx">
+      <DependentUpon>ConsultaFaturaPagarfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Faturas Pagar\FaturaPagarfrm.resx">
+      <DependentUpon>FaturaPagarfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Faturas Receber\ConsultaFaturaReceberfrm.resx">
+      <DependentUpon>ConsultaFaturaReceberfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Faturas Receber\FaturaReceberfrm.resx">
+      <DependentUpon>FaturaReceberfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\MainFinanceirofrm.resx">
+      <DependentUpon>MainFinanceirofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaPagamento\MainFormaPagamentofrm.resx">
+      <DependentUpon>MainFormaPagamentofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedor\CadastroFornecedorfrm.resx">
+      <DependentUpon>CadastroFornecedorfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedor\MainFornecedorfrm.resx">
+      <DependentUpon>MainFornecedorfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionario\CadastroFuncionariofrm.resx">
+      <DependentUpon>CadastroFuncionariofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionario\MainFuncionariofrm.resx">
+      <DependentUpon>MainFuncionariofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\BuscaUsuariofrm.resx">
+      <DependentUpon>BuscaUsuariofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loginfrm.resx">
+      <DependentUpon>Loginfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\CadastroUsuariofrm.resx">
+      <DependentUpon>CadastroUsuariofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\MainUsuariofrm.resx">
+      <DependentUpon>MainUsuariofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materiais\MainMateriaisfrm.resx">
+      <DependentUpon>MainMateriaisfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paciente\CadastroPacientefrm.resx">
+      <DependentUpon>CadastroPacientefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paciente\MainPacientesfrm.resx">
+      <DependentUpon>MainPacientesfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paciente\BuscaPacienteAgendafrm.resx">
+      <DependentUpon>BuscaPacienteAgendafrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parceiro\MainParceirofrm.resx">
+      <DependentUpon>MainParceirofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procedimento\BuscaProcedimentofrm.resx">
+      <DependentUpon>BuscaProcedimentofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procedimento\CadastroProcedimentofrm.resx">
+      <DependentUpon>CadastroProcedimentofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Relatorio\MainRelatoriofrm.resx">
+      <DependentUpon>MainRelatoriofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\RelatorioAtendimentofrm.resx">
+      <DependentUpon>RelatorioAtendimentofrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\RelatorioRecursosfrm.resx">
+      <DependentUpon>RelatorioRecursosfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabelas\MainTabelasfrm.resx">
+      <DependentUpon>MainTabelasfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11942831-ocp-logo-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_escolha_uma_agenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group_users_13234.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vista_1846_53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fechar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\presence_online.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dorapoint_R.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil_4076.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16x16-mini-application-icon-pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adduser_añadir_3553.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_user_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pesquisa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon-hi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system-delete-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bagofmoney_dollar_4399.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\95833-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_estoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30397.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sketch-Book-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dentist-drill-work-stomatology-instrument-tooth-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
